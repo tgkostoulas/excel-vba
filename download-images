@@ -1,6 +1,6 @@
-// Coloumn A has the url's
-// Coloumn B has the desired name
-// Coloumn C outputs a status msg
+// Column A has the url's
+// Column B has the desired name
+// Column C outputs a status msg
 // Saves image's with the .jpg file type
 
 Private Declare Function URLDownloadToFile Lib "urlmon" _
