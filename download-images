@@ -21,7 +21,7 @@ End Function
 Sub DownLoadFiles()
 Dim cell As Range, rngListOfURL As Range
 
-Const PTH = "C:\Users\tkostoulas\Desktop\aromaton\"   'this is your save to location
+Const PTH = "C:\"   'this is your save to location
 
 Set rngListOfURL = Sheet1.Range("A1:A13697")   'amend as appropriate
 
