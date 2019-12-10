@@ -1,0 +1,25 @@
+Sub Macro1()
+Dim inputFile As String, inputWb As Workbook
+    Dim lastRow As Long, row As Long, n As Long
+    Dim newCSV As Workbook
+
+With ActiveWorkbook.Worksheets(1)
+    lastRow = .Cells(Rows.Count, "A").End(xlUp).row
+
+    Set newCSV = Workbooks.Add
+
+    n = 0
+    For row = 2 To lastRow Step 2000
+        n = n + 1
+        .Rows(1).EntireRow.Copy newCSV.Worksheets(1).Range("A1")
+        .Rows(row & ":" & row + 2000 - 1).EntireRow.Copy newCSV.Worksheets(1).Range("A2")
+
+        'File format -> https://docs.microsoft.com/en-us/office/vba/api/excel.xlfileformat
+        
+        newCSV.SaveAs Filename:=n & ".xlsx", FileFormat:=xlWorkbookDefault, CreateBackup:=False
+    Next
+End With
+
+newCSV.Close saveChanges:=False
+
+End Sub
