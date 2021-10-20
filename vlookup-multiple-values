@@ -1,0 +1,7 @@
+=INDEX($B$14501:$B$41826, SMALL(IF($A2=$A$14501:$A$41826, ROW($A$14501:$A$41826)-MIN(ROW($A$14501:$A$41826))+1, ""), COLUMNS($A$1:A1)))
+
+Cntrl + Shift + Enter
+
+$B$14501:$B$41826 ===> array with data to return
+$A$14501:$A$41826 ===> array with identifier
+$A2 ===> id to search in array
